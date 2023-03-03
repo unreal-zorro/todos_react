@@ -5,7 +5,7 @@
 ### 1.1 Цель создания приложения
 
 Приложение написано после прочтения статьи на
-Хабре ![Habr](./images/habr.png): [Чистая Архитектура для веб-приложений](https://habr.com/ru/post/493430/) ![Clean architecture](./images/Clean_architecture.png)
+Хабре ![Habr](./images/Habr.png): [Чистая Архитектура для веб-приложений](https://habr.com/ru/post/493430/) ![Clean architecture](./images/Clean_architecture.png)
 .
 
 Захотелось попробовать чистую архитектуру в действии.
