@@ -1,46 +1,153 @@
-# Getting Started with Create React App
+# Заметки ![Todos](./images/Todos.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. Описание
 
-## Available Scripts
+### 1.1 Цель создания приложения
 
-In the project directory, you can run:
+Приложение написано после прочтения статьи на
+Хабре ![Habr](./images/habr.png): [Чистая Архитектура для веб-приложений](https://habr.com/ru/post/493430/) ![Clean architecture](./images/Clean_architecture.png)
+.
 
-### `npm start`
+Захотелось попробовать чистую архитектуру в действии.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+В данном репозитории используется фреймворк React ![React](./images/React.png).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Также приложение реализовано на фреймворках Angular ![Angular](./images/Angular.png) и Vue ![Vue](./images/Vue.png) (в
+других моих репозиториях).
 
-### `npm test`
+### 1.2 Про приложение
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Само приложение представляет собой SPA ![SPA](./images/SPA.png) приложение для заметок.
 
-### `npm run build`
+Каждая заметка имеет название и список задач. Каждая
+задача имеет текст и чекбокс, говорящий о её завершённости.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+На главной странице показано количество заметок.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+На странице "Все заметки" показан список всех заметок. У каждой заметки показано только 3 первые задачи. Можно открыть
+заметку и посмотреть все задачи в ней.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+На странице "Новая заметка" можно создать заметку: ввести заголовок заметки, добавить задачи, ввести их заголовки и их
+статус - завершённые или нет.
 
-### `npm run eject`
+Также заметку можно отредактировать, изменяя данные в ней. При сохранении изменений или удалении заметки появляется
+модальное окно с подтверждением действия.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Заметки сохраняются в Local Storage браузера.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Также при создании новой заметки или редактировании существующей имеется возможность выполнить отмену/повтор последних
+действий.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 1.3 Стили
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Для стилизации используется библиотека Bootstrap ![Bootstrap](./images/Bootstrap.png).
 
-## Learn More
+### 1.4 Язык программирования
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Приложение написано на языке Typescript ![Typescript](./images/Typescript.png).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 1.5 Фреймворк
+
+Фронтенд-фреймворк - React ![React](./images/React.png).
+
+## 2. Настройка приложения с нуля ![Setting](./images/Setting.png)
+
+### 2.1 Создать папку **todos_react**
+
+### 2.2 Создать приложение react
+
+* **npx create-react-app . --template typescript**
+
+### 2.3 Установить зависимости
+
+* **npm i -D eslint**
+* **npm i -D eslint-plugin-react-hooks**
+
+* **npm i -D prettier** ![Prettier](./images/Prettier.png)
+* **npm i -D eslint-config-prettier eslint-plugin-prettier**
+
+* **npm i bootstrap@5.3.0-alpha1**
+* **npm i bootstrap-icons**
+
+* **npm i first-di**
+* **npm i class-validator**
+* **npm i reflect-metadata**
+* **npm i ts-serializable**
+* **npm i typeorm**
+
+* **npm i react-router-dom**
+* **npm i axios**
+
+### 2.4 Инициализировать eslint ![ESLint](./images/ESLint.png):
+
+* **npx eslint --init**
+
+### 2.5 Добавить в файл .eslintrc.json:
+
+```
+{
+  "extends": [
+    // ...
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    // ...
+    "react-hooks",
+    "prettier"
+  ],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "prettier/prettier": "error",
+    "react/prop-types": "off"
+  }
+}
+```
+
+### 2.6 Добавить в файл .prettierrc:
+
+```
+{
+  "semi": true,
+  "trailingComma": "none",
+  "singleQuote": false,
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "arrowParens": "avoid"
+}
+```
+
+### 2.7 В файле tsconfig.json включить:
+
+```
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true, // Позволяет генерировать рефлексию
+    "experimentalDecorators": true, // Включает поддержку декораторов
+  }
+}
+```
+
+### 2.8 В IDE ![IDE](./images/IDE.png) включить опции:
+
+#### Settings/Languages & Frameworks/Javascript/Prettier:
+
+* Prettier package: выбрать текущий каталог - **...\node_modules\prettier**
+* поставить галочку - **On 'Reformat Code' action**
+* поставить галочку - **On save**
+
+#### Settings/Tools/Action on Save:
+
+* поставить галочку - **Reformat code**
+* поставить галочку - **Run eslint --fix**
+
+### 2.9 Добавить в файл ./src/index.ts:
+
+```
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import './index.css';
+```
