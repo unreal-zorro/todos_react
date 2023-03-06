@@ -151,3 +151,38 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import './index.css';
 ```
+
+### 2.10 Настройка тестов
+
+2.10.1 Установить зависимости:
+
+* **npm i enzyme enzyme-to-json enzyme-adapter-react-16 react-test-renderer**
+* **npm i -D @types/enzyme**
+* **npm i -D jest-extended**
+* **npm i -D @cfaester/enzyme-adapter-react-18**
+
+* **npm i cypress**
+
+2.10.2 Добавить в файл package.json:
+
+```
+  "scripts": {
+	  "cypress": "node_modules/.bin/cypress open", 
+```
+
+2.10.3 Добавить в файл ./src/setupTests.js:
+
+```
+import {configure} from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+
+configure({adapter: new Adapter()});
+
+const config = {
+  "jest": {
+    "setupTestFrameworkScriptFile": "jest-extended"
+  }
+}
+
+export default config;
+```
