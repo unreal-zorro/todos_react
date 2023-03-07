@@ -1,22 +1,22 @@
 import { NoteDTO } from "./note.DTO";
 
-let todo: NoteDTO | null = null;
-beforeEach(() => {
-  todo = new NoteDTO();
+let note: NoteDTO | null = null;
+beforeAll(() => {
+  note = new NoteDTO();
 });
 
-afterEach(() => {
-  todo = null;
+afterAll(() => {
+  note = null;
 });
 
 it("should property '_id' to be ''", () => {
-  expect(todo?._id).toBe("");
+  expect(note?._id).toBe("");
 });
 
 it("should property 'title' to be ''", () => {
-  expect(todo?.title).toBeFalsy();
+  expect(note?.title).toBe("");
 });
 
 it("should property 'todos' to be []", () => {
-  expect(todo?.todos).toStrictEqual([]);
+  expect(note?.todos).toStrictEqual([]);
 });

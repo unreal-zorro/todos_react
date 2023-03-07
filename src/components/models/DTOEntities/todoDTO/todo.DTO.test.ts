@@ -1,11 +1,11 @@
 import { TodoDTO } from "./todo.DTO";
 
 let todo: TodoDTO | null = null;
-beforeEach(() => {
+beforeAll(() => {
   todo = new TodoDTO();
 });
 
-afterEach(() => {
+afterAll(() => {
   todo = null;
 });
 
