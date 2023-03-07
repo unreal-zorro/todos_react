@@ -186,3 +186,19 @@ const config = {
 
 export default config;
 ```
+
+2.10.4 Добавить в файл package.json:
+
+```
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!ts-serializable)"
+    ]
+  }
+```
+
+2.10.5 Обновить библиотеки до последних версий:
+
+* **npm i -D @testing-library/react@latest**
+* **npm i -D @testing-library/jest-dom@latest**
+* **npm i -D @testing-library/user-event@latest**
