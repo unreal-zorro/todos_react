@@ -69,7 +69,6 @@
   },
   "jest": {
     "transformIgnorePatterns": [
-      "node_modules/(?!ts-serializable)"
     ]
   }
 }
