@@ -187,12 +187,13 @@ const config = {
 export default config;
 ```
 
-2.10.4 Добавить в файл package.json:
+2.10.4 Добавить в файл package.json (возможно не надо добавлять, если будет ошибка?):
 
 ```
   "jest": {
     "transformIgnorePatterns": [
-      "node_modules/(?!ts-serializable)"
+      "node_modules/(?!ts-serializable)",
+      "node_modules/(?!first-di)"
     ]
   }
 ```
