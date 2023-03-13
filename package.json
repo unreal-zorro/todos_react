@@ -1,11 +1,8 @@
 {
   "name": "todos_react",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.14",
     "@types/react": "^18.0.28",
@@ -14,11 +11,15 @@
     "bootstrap": "^5.3.0-alpha1",
     "bootstrap-icons": "^1.10.3",
     "class-validator": "^0.14.0",
+    "cypress": "^12.7.0",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "first-di": "^1.0.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
+    "react-test-renderer": "^18.2.0",
     "reflect-metadata": "^0.1.13",
     "ts-serializable": "^3.0.28",
     "typeorm": "^0.3.12",
@@ -29,7 +30,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "node_modules/.bin/cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -50,6 +52,11 @@
     ]
   },
   "devDependencies": {
+    "@cfaester/enzyme-adapter-react-18": "^0.6.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/enzyme": "^3.10.12",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
     "eslint": "^8.35.0",
@@ -57,6 +64,11 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jest-extended": "^3.2.4",
     "prettier": "^2.8.4"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+    ]
   }
 }

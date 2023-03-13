@@ -1,0 +1,7 @@
+.scroll {
+    margin-left: calc(100vw - 100%);
+}
+
+.main-container {
+    max-width: 720px;
+}
