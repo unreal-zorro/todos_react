@@ -99,7 +99,12 @@
   "rules": {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
     "react/prop-types": "off"
   }
 }
@@ -203,3 +208,14 @@ export default config;
 * **npm i -D @testing-library/react@latest**
 * **npm i -D @testing-library/jest-dom@latest**
 * **npm i -D @testing-library/user-event@latest**
+
+## 3. Развёртывание приложения (deploy)
+
+### 3.1 Firebase
+
+Фронтенд-веб-приложение было развёрнуто (задеплоено) на платформе firebase.
+
+Адреса в сети интернет:
+
+* **https://todos-react-777.web.app**
+* **https://todos-react-777.firebaseapp.com**
